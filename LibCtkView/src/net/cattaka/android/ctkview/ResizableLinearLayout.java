@@ -115,6 +115,13 @@ public class ResizableLinearLayout extends LinearLayout {
             }
             super.addView(slider, index, sliderParams);
         }
+        if (getOrientation() == LinearLayout.VERTICAL) {
+            params.width = LayoutParams.MATCH_PARENT;
+            params.height = 0;
+        } else {
+            params.width = 0;
+            params.height = LayoutParams.MATCH_PARENT;
+        }
         super.addView(child, index, params);
     }
 }
